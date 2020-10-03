@@ -46,6 +46,8 @@ void dfs(int x, int y, int step) {
         used[dx][dy] = 1;
         dfs(dx, dy, step + 1);
         //到底用不用解锁呢？？
+        //用！用不用解锁得看具体的语义信息!
+        used[dx][dy] = 0;
     }
     return ;
 }
