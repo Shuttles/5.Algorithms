@@ -41,7 +41,7 @@ void dfs(int x, int y, int step) {
     for (int i = 0; i < 4; i++) {
         int dx = x + dnext[i][0];
         int dy = y + dnext[i][1];
-        if (dx < 0 || dx >= n || dy < 0 || dy >= n) continue;
+        if (dx < 0 || dx >= n || dy < 0 || dy >= m) continue;
         if (mmap[dx][dy] == 1 || used[dx][dy] == 1) continue;
         used[dx][dy] = 1;
         dfs(dx, dy, step + 1);
