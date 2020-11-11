@@ -1,11 +1,11 @@
 /*************************************************************************
-	> File Name: input.h
+	> File Name: output_arr.h
 	> Author: 少年宇
 	> Mail: 
-	> Created Time: 2020年11月06日 星期五 15时03分03秒
+	> Created Time: 2020年11月11日 星期三 20时02分53秒
  ************************************************************************/
 
-#ifndef _INPUT_H
-#define _INPUT_H
-void init(int *arr, int size, int n); 
+#ifndef _OUTPUT_ARR_H
+#define _OUTPUT_ARR_H
+void output_arr(int *arr, int n);
 #endif

@@ -1,22 +1,20 @@
 /*************************************************************************
-	> File Name: input.cpp
+	> File Name: output_arr.cpp
 	> Author: 少年宇
 	> Mail: 
-	> Created Time: 2020年11月06日 星期五 15时03分41秒
+	> Created Time: 2020年11月11日 星期三 20时03分09秒
  ************************************************************************/
 
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-#include <ctime>
 using namespace std;
 
-#define MAX_N 2621440
 
-void init(int *arr, int size, int n) {
-    srand(time(0));
+void output_arr(int *arr, int n) {
     for (int i = 0; i < n; i++) {
-        arr[i] = (rand() % MAX_N);
+        printf("%d ", arr[i]);
     }
-    return ;
-} 
+    printf("\n");
+}
+

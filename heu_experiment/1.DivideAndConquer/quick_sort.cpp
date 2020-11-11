@@ -8,24 +8,11 @@
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-#include <algorithm>
-#include <queue>
-#include <stack>
-#include <set>
-#include <map>
-#include <unordered_map>
-#include <string>
-#include <vector>
-#include <ctime>
-#include <unistd.h>
 using namespace std;
 
-void output_arr(int *arr, int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
+
+
+
 
 void quick_sort(int *arr, int n, int left, int right) {
     if (right <= left) return ;//一定要写<=
@@ -50,7 +37,7 @@ void quick_sort(int *arr, int n, int left, int right) {
 }
 
 
-
+/*
 int main() {
     srand(time(0));
     int arr[10] = {74, 57, 98, 82, 47, 32, 80, 66, 95, 19};
@@ -63,4 +50,4 @@ int main() {
     output_arr(arr, 10);
 
     return 0;
-}
+}*/

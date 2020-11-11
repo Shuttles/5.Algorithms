@@ -1,0 +1,1 @@
+g++ -o main input.cpp output_arr.cpp quick_sort.cpp  binary_search.cpp main.cpp 
