@@ -8,10 +8,10 @@
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-#include "./quick_sort.h"
-#include "./binary_search.h"
-#include "./input.h"
-#include "./output_arr.h"
+#include "../include/quick_sort.h"
+#include "../include/binary_search.h"
+#include "../include/input.h"
+#include "../include/output_arr.h"
 
 using namespace std;
 
