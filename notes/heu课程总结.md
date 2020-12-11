@@ -93,3 +93,56 @@
 
 ![img](https://wx3.sinaimg.cn/mw690/005LasY6ly1glj0vm81vqj31f60co41p.jpg)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 2.递归与分治
+
+
+
+# 3.动态规划
+
+
+
+# 4.贪心算法
+
+## 4.1一些概念
+
+1. 两个基本性质
+   + 最优子结构
+   + 贪心选择性
+
+
+
+# 5.回溯法
+
+## 5.1子集树
+
+![img](https://wx3.sinaimg.cn/mw690/005LasY6ly1glk5z7qud2j31870u0dkw.jpg)
+
+### 5.1.1 01背包问题
+
+
+
+## 5.2排列树
+
+![img](https://wx2.sinaimg.cn/mw690/005LasY6ly1glk5zb0wxrj317g0u0jx0.jpg)
+
+
+
+### 5.2.1旅行商问题
+
+
+
+# 6.分支限界法
