@@ -512,7 +512,7 @@ dp必须满足最优化原理与无后效性。
 
    + 因变量和哪几个参数有关系，那么这几个参数就作为自变量，维数就是几维！
 + 本质就是寻找问题中的==自变量和因变量==！
-   
+  
 4. 递推公式如何推导？
 
    + 通常情况下采用==容斥原理==
@@ -534,5 +534,227 @@ dp必须满足最优化原理与无后效性。
 
  
 
+## 1.1例题
+
+### 1.1.1爬楼梯
+
+### 1.1.2钱币问题
+
+![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gmkoz8bwf4j310x0keap7.jpg)
+
+![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gmkoxbj6i3j31d20t51kx.jpg)
+
+### 1.1.3墙壁涂色
+
+比较难顶
 
 
+
+
+
+
+
+
+
+# 2.动态规划
+
+## 2.1引例--数字三角形
+
+题面：
+
+http://oj.haizeix.com/problem/43
+
+![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gmlai7l0m0j30zx0hrn7b.jpg)
+
+![img](https://wx3.sinaimg.cn/mw690/005LasY6gy1gmlalvwezvj30yy0o9dtr.jpg)
+
+
+
+![img](https://wx4.sinaimg.cn/mw690/005LasY6gy1gmlan4psckj310z0n015c.jpg)
+
+![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gmlap8vc9rj31460qotpp.jpg)
+
+![img](https://wx4.sinaimg.cn/mw690/005LasY6gy1gmlaqmo2p7j314c0eyk0x.jpg)
+
+![img](https://wx4.sinaimg.cn/mw690/005LasY6gy1gmlarww0kzj315j0psx09.jpg)
+
+
+
+
+
+
+
+
+
+## 2.2解题套路
+
+1. 确定动归状态
+
+2. 推导状态转移方程，理解：转移、决策
+
+   + 所谓转移，把所有决定f(i,j)最优值的状态，放入到决策过程中
+
+   + ==推导方向==
+   + 我(dp[i])从哪里来
+     
+     + 用别的node值更新我的值
+       + 例如：大部分题
+
+     + 我(dp[i])到哪里去
+
+       + 用我这个node的值更新其他值
+       + 例如：杂务(P1113) 神经网络(P1038) 旅行计划(P1137)
+
+3. 正确性证明：
+
+   利用数学归纳法
+
+4. 程序实现
+
+
+
+## 2.3拓扑序
+
+1. 拓扑序来源于图形结构，而图形结构是最最抽象的数据结构，必须理解成思维逻辑结构。
+
+2. 拓扑序是一种图形结构上的依赖顺序，一个图的拓扑序不唯一。
+3. ==定义==：合法的拓扑序就是一种排序，其中各node的依赖项必须出现在node前面
+4. ==本质==作用：把图形结构变成一个一维序列；
+   + 因为图形结构不能用循环遍历，一维序列可以
+
+
+
+![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gmlaz0df4nj310v0qctpr.jpg)
+
+A：起床
+
+B：穿上衣 D：传外套
+
+C：穿秋裤 E：穿外裤
+
+F：下床
+
+
+
+如何应用于dp？
+
+结论：==dp中状态之间的求解顺序需要满足拓扑序==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 3.经典题
+
+## 3.1最长上升子序列
+
+题面：
+
+http://oj.haizeix.com/problem/44
+
+1. 状态定义
+
+   $f(i)$ 代表以$str[i]$ 结尾的最长上升子序列的长度
+
+2. 状态转移方程
+
+   其实就是==把$str[i]$ 接到能接的最长的子序列后面去==
+
+   $f(i) = max(f[j]) + 1 |  j<i, str[j]<str[i]$
+
+   ![img](https://wx3.sinaimg.cn/mw690/005LasY6gy1gml0x5f2i3j30z30icqgq.jpg)
+
+3. 程序实现
+
+4. 复杂度分析
+
+   + 时间复杂度
+
+     $O(n^2)$
+
+5. 优化：
+
+   对状态转移过程进行优化
+
+   
+
+## 3.2最长公共子序列
+
+题面：
+
+http://oj.haizeix.com/problem/45
+
+1. 状态定义
+
+   $dp[i][j]$ str1取前i位，str2取前j位，它们的最长公共子序列
+
+2. 状态转移方程
+
+   
+
+3. 程序实现
+
+4. 复杂度分析
+
+   + 时间复杂度
+   + $O(n * m)$
+
+5. 学习重点
+
+   注意到，参与决策的状态数量，是会根据条件不同而改变的。
+
+
+
+
+
+## 3.3切割回文
+
+题面
+
+http://oj.haizeix.com/problem/46
+
+1. 状态定义
+
+   $dp[i]$ 以第i位为结尾，最少分多少段 
+
+2. 状态转移方程
+
+   ![img](https://wx3.sinaimg.cn/mw690/005LasY6gy1gmlbkac5xqj30xq0hndv7.jpg)
+
+   
+
+3. 程序实现
+
+
+
+## 3.4背包问题
+
+
+
+## 3.5扔鸡蛋
+
+题面：
+
+http://oj.haizeix.com/problem/50
+
+1. 状态定义
+
+   $dp[n][m]$ 用n个鸡蛋，测m层楼，最坏情况下最少测多少次
+
+2. 状态转移方程
+
+   $dp[n][m] = min(max\left\{\begin{aligned}&dp[n-1][k-1] + 1 &鸡蛋碎了\\&dp[n][m-k] + 1 &鸡蛋没碎\end{aligned})\right.$
+
+   ![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gmla3wibegj31h80luwuq.jpg)
+   
+3. 程序实现
