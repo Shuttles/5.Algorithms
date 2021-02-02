@@ -903,7 +903,7 @@ http://oj.haizeix.com/problem/50
 
 ## 4.2扔鸡蛋
 
-转移过程的优化
+### 4.2.1转移过程的优化
 
 ![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gn8esszng8j30rn0gjdox.jpg)
 
@@ -941,7 +941,7 @@ http://oj.haizeix.com/problem/50
 
 
 
-状态定义的优化
+### 4.2.2状态定义的优化
 
 1. 原状态定义所需存储空间与m相关，m值域大，存不下
 
@@ -965,4 +965,15 @@ http://oj.haizeix.com/problem/50
 7. 时间复杂度
 
    $O(n \times MAX_k)$
+   
+8. PS
 
+   + 然而这种做法过不了leetcode！！！
+
+     ![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gn8yxbn9xbj316r0u0jws.jpg)
+
+   + 原因：MAX_N太大了！导致后面有溢出！！
+
+   + 解决方法：
+
+     ==递归＋记忆化！！！！==
