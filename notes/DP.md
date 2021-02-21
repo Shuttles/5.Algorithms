@@ -814,6 +814,32 @@ http://oj.haizeix.com/problem/47
 
 http://oj.haizeix.com/problem/48
 
+#### 朴素做法
+
+![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gnuyg3y9qej30u20c3jvq.jpg)
+
+1. 状态定义
+
+   $dp[i][j]$ 对前i个物品进行选择，背包容量为j时，可以获得的最大价值
+
+2. 状态转移方程
+
+   $dp[i][j] = max(dp[i - 1][j - k * v] + k * w)$  $k * v <= j$
+
+3. 程序实现
+
+   三层循环
+
+4. 时间复杂度
+
+   $O(n \times m^2)$
+
+
+
+#### 优化做法
+
+光哥的做法：
+
 1. 状态定义
 
    $dp[i][j]$ 对前i个物品进行选择，背包容量为j时，可以获得的最大价值
@@ -824,13 +850,24 @@ http://oj.haizeix.com/problem/48
 
    ps：
 
-   + 第二种状态是保证选了第i件物品的，但是选多少件并不知道，也不需要知道。why？
+   + 第二种状态是保证选了第i件物品的，但是选多少件并不知道，也不需要知道。why？(看下面yxc的推导)
 
 3. 程序实现
 
    直接在01背包的一维dp上修改即可
+   
+4. 时间复杂度
+
+   $O(n \times m)$
 
 
+
+yxc的推导：
+
+![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gnuyqghfc1j30ls08swg1.jpg)
+
+1. 可以发现，并不需要知道每种物品选了多少件！
+2. 于是可以优化掉最内层循环！
 
 
 
@@ -840,13 +877,57 @@ http://oj.haizeix.com/problem/48
 
 http://oj.haizeix.com/problem/49
 
+光哥做法：
+
 问题模型转化：
 
 1. 多重背包，每类物品多出了一个数量限制
+
 2. 01背包，每种物品只有一个
+
 3. 将多重背包中的数量限制，当做多个单一物品来处理。
+
 4. 至此，就将多重背包问题转化成了01背包问题。
-5. 这版程序只能得60分，还需优化！！
+
+5. 时间复杂度
+
+   $O(n \times m \times s)$
+
+6. 这版程序只能得60分，还需优化！！
+
+
+
+yxc做法
+
+1. 和完全背包的yxc做法一样
+
+2. 枚举件数ｋ，看看到底选几个该种物品，总价值为max
+
+3. 时间复杂度
+
+   $O(n \times m \times s)$
+
+4. 考虑优化
+
+   ![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gnuziw3wdnj30pz0380tn.jpg)
+
+   可见，$f[i, j-v]$　多出了一项，所以不能像完全背包那样优化！！
+
+
+
+
+
+### 3.4.4分组背包
+
+题面：
+
+https://www.acwing.com/problem/content/9/
+
+1. 其实思路和完全背包的朴素做法很相似
+
+2. 方法：
+
+   枚举第i组物品选哪个！(可以选0个)
 
 
 
@@ -1100,6 +1181,8 @@ http://oj.haizeix.com/problem/50
   ![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gnn4mq8mv3j30xm0gbn97.jpg)
 
 + 结论1：如果k和j点的斜率< 2Si，那么就应该从ｊ点转移，而不是ｋ点！
+
+  ![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gnuynd213ej30x10i8aoa.jpg)
 
   ![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gnn4xk7vl6j30ur0fz46g.jpg)
 
