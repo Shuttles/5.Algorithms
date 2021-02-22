@@ -1204,3 +1204,51 @@ http://oj.haizeix.com/problem/50
 
 2. 说实话代码实现我不是很懂ＴＡＴ
 
+
+
+
+
+# 5.练习题
+
+## 5.1最大子段和
+
+题面：
+
+http://oj.haizeix.com/problem/606
+
+https://www.acwing.com/problem/content/description/1481/
+
+### 1.我的做法：
+
+1. 状态定义
+
+   $dp[i]$ 以第ｉ位作为结尾的最大子段和是多少
+
+2. 状态转移方程
+
+   我的做法
+
+   + $$dp[i] =  \left\{  \begin{aligned} &dp[i - 1] + num[i] &dp[i - 1] >0\\  &num[i] &dp[i - 1]<=0 \end{aligned} \right.$$
+   + 由于子段的==连续性==，很容易可以想到$dp[i]$所代表的子序列要么是接在前面的某个子序列后面，要么是自己一个。如何来分呢？看$dp[i - 1] >0$　就行了(==本质上就是看哪个大==)
+
+3. 程序实现
+
+
+
+### 2.yxc做法
+
+1. 状态定义
+
+   $dp[i]$　所有以第ｉ位作为右端点的子段区间中，和最大的是多少
+
+2. 状态转移方程
+
+   $dp[i] = max(num[i], dp[i - 1] + num[i])$
+
+   ![img](https://wx2.sinaimg.cn/mw690/005LasY6gy1gnwhqyjckjj30ky0eedit.jpg)
+
+3. 程序实现
+
+4. PS
+
+   ==其实本质上和我的做法是一样的！！==
