@@ -10,7 +10,7 @@ using namespace std;
 #define MAX_N 100
 
 int arr[MAX_N + 5];
-bool used[MAX_N + 5];//其实并不需要这个数组，可以看4.组合数.cpp
+bool used[MAX_N + 5];
 int ans = 0;
 
 //
@@ -29,12 +29,12 @@ void dfs(int depth, int m, int n) {                          //语义信息：�
     int start = 1;
     if (depth > 0) start = arr[depth - 1] + 1;//剪枝，因为后一个数必须比前一个数大！
     for (int i = start; i <= m; i++) {
-        if (used[i] == false) {                       //第一个未被标记的i可以放在第depth个盒子中
-            used[i] = true;
+        //if (used[i] == false) {                       //第一个未被标记的i可以放在第depth个盒子中
+            //used[i] = true;
             arr[depth] = i;
             dfs(depth + 1, m, n);                        //必须写在for循环里！！
-            used[i] = false;
-        }
+            //used[i] = false;
+        //}
     }
     return ;
 }
