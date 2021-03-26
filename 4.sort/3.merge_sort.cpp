@@ -33,7 +33,7 @@ void merge(int *arr, int l, int mid, int r) {
     int *temp = (int *)calloc(n, sizeof(int));
     int p1 = l, p2 = mid + 1, ind = 0;
     while (p1 <= mid || p2 <= r) {
-        if (p2 > r || arr[p1] <= arr[p2]) {
+        if (p2 > r || (p1 <= mid && arr[p1] <= arr[p2])) {//必须写上p1<=mid (做逆序对那题的教训)
             temp[ind++] = arr[p1++];
         } else {
             temp[ind++] = arr[p2++];
