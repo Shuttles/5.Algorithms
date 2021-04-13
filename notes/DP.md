@@ -595,15 +595,27 @@ http://oj.haizeix.com/problem/43
    + 所谓转移，把所有决定f(i,j)最优值的状态，放入到决策过程中
 
    + ==推导方向==
-   + 我(dp[i])从哪里来
-     
-     + 用别的node值更新我的值
+
+     + 我(dp[i])从哪里来
+
+       + 用别的node值更新我的值
+
        + 例如：大部分题
 
      + 我(dp[i])到哪里去
 
        + 用我这个node的值更新其他值
        + 例如：杂务(P1113) 神经网络(P1038) 旅行计划(P1137)
+
+   + “我从哪里来”的==分类==依据
+
+     + ==**最后一个“不同”的点**==
+
+       背包、lcs、最长公共子序列、摘花生(acwing1015)
+
+       ![img](https://wx1.sinaimg.cn/mw690/005LasY6ly1gpgv2pu8anj30vh0hqwkk.jpg)
+
+       ![img](https://wx1.sinaimg.cn/mw690/005LasY6ly1gpgu9ohhdrj30vs0hk10a.jpg)
 
 3. 正确性证明：
 
@@ -1252,3 +1264,29 @@ https://www.acwing.com/problem/content/description/1481/
 4. PS
 
    ==其实本质上和我的做法是一样的！！==
+
+
+
+
+
+## 5.2波动数列
+
+1. 其实本质上是组合问题！（背包问题）
+
+2. 原序列所有的不同方案取决于什么呢？
+
+   取决于每次d选啥以及x选啥(x可用其他表示)　即所有选法的总和
+
+   ![img](https://wx2.sinaimg.cn/mw690/005LasY6ly1gph2aekf6dj30zd0jbwko.jpg)
+
+3. 闫氏DP
+
+   ![img](https://wx1.sinaimg.cn/mw690/005LasY6ly1gph2je589ij30w30i7dka.jpg)
+
+   ![img](https://wx4.sinaimg.cn/mw690/005LasY6ly1gph2iclelzj31110jiwkb.jpg)
+
+4. 代码实现
+
+   + 边界条件
+
+     $f(0, 0) = 1,   f(0, i) = 0$  
