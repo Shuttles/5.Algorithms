@@ -540,6 +540,8 @@ dp必须满足最优化原理与无后效性。
 
 ### 1.1.2钱币问题
 
+http://oj.haizeix.com/problem/42
+
 ![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gmkoz8bwf4j310x0keap7.jpg)
 
 ![img](https://wx1.sinaimg.cn/mw690/005LasY6gy1gmkoxbj6i3j31d20t51kx.jpg)
@@ -588,9 +590,9 @@ http://oj.haizeix.com/problem/43
 
 ## 2.2解题套路
 
-1. 确定动归状态
+1. 确定<u>动归状态</u>
 
-2. 推导状态转移方程，理解：转移、决策
+2. 推导<u>状态转移方程</u>，理解：转移、决策
 
    + 所谓转移，把所有决定f(i,j)最优值的状态，放入到决策过程中
 
