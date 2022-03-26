@@ -1,3 +1,7 @@
+PS:那个DataStrcutre里的二分笔记更好！！！！
+
+
+
 # Binary_search
 
 ## 一、朴素的二分
